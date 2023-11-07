@@ -7,13 +7,13 @@ import { loginUser } from "../../redux/actions/actions";
 import { redirect } from "react-router-dom";
 
 const LoginComponent = ({ loginUser }) => {
-  const handleLogin = (username, password) => {
+  const handleLogin = () => {
     let loginData = {
       username: document.getElementById("#loginUsername").value,
       password: document.getElementById("#loginPassword").value,
     };
 
-    loginUser(username, password);
+    loginUser(loginData.username, loginData.password);
 
      redirect("/profile");
   };
