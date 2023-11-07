@@ -13,6 +13,14 @@ const RegistrationComponent = ({registerUser}) => {
   return (
     <Container>
       <Form>
+      <Form.Group className="mb-3" controlId="formBasicName">
+          <Form.Label>Имя</Form.Label>
+          <Form.Control type="text" placeholder="Введите имя пользователя" id="registrationName"/>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicLastname">
+          <Form.Label>Фамилия</Form.Label>
+          <Form.Control type="text" placeholder="Введите имя пользователя" id="registrationlastName"/>
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Электронная почта</Form.Label>
           <Form.Control type="email" placeholder="Введите ваш e-mail адрес " id="registrationEmail"/>
@@ -20,9 +28,9 @@ const RegistrationComponent = ({registerUser}) => {
             Мы никогда не поделимся вашим мейл адресом с сторонними лицами
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="formBasicUsername">
           <Form.Label>Имя пользователя</Form.Label>
-          <Form.Control type="text" placeholder="Введите имя пользователя" id="registrationUsername"/>
+          <Form.Control type="text" placeholder="Введите имя пользователя" id="registrationuserName"/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -31,14 +39,17 @@ const RegistrationComponent = ({registerUser}) => {
         </Form.Group>
         <Button variant="primary" type="submit" onClick={() => {
             let email = document.querySelector('#registrationEmail').value;
-            let username = document.querySelector('#registrationUsername').value;
+            let name = document.querySelector('#registrationName').value;
+            let lastName = document.querySelector('#registrationlastName').value;
+            let username = document.querySelector('#registrationuserName').value;
             let password = document.querySelector('#registrationPassword').value;
 
             const userData = {
-              username: username,
+              firstName: name,
+              lastName: lastName,
               email: email,
-              password: password,
-              userIsRegistered: true,
+              login: username,
+              passw: password,
             };
 
             registerUser(userData);
