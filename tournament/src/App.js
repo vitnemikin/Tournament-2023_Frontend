@@ -2,8 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Image } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AboutComponent from "./components/AboutComponent/AboutComponent";
 import {
   BrowserRouter as Router,
@@ -12,10 +11,12 @@ import {
   NavLink,
   Link,
 } from "react-router-dom";
+import RegistrationComponent from "./components/RegistrationComponent/RegistrationComponent";
+import LoginComponent from "./components/LoginComponent/LoginComponent";
 const App = () => {
   return (
     <Router basename="/">
-      <Navbar expand="lg" fixed="top">
+      <Navbar expand="lg">
         <Container>
           <Navbar.Brand >
           </Navbar.Brand>
@@ -32,14 +33,26 @@ const App = () => {
                   О нас
                 </NavLink>
               </Nav.Link>
+              <Nav.Link>
+                <NavLink className="nav-link" to="/register">
+                  Регистрация
+                </NavLink>
+              </Nav.Link>
+              <Nav.Link>
+                <NavLink className="nav-link" to="/login">
+                  Логин
+                </NavLink>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
       <Routes>
-        <Route path="/" element={<MainComponent />} />
+        {/* <Route path="/" element={<MainComponent />} /> */}
         <Route path="/aboutus" element={<AboutComponent />} />
+        <Route path="/register" element={<RegistrationComponent />} />
+        <Route path="/login" element={<LoginComponent />} />
       </Routes>
     </Router>
   );
