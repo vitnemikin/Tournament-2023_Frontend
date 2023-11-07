@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import RegistrationComponent from "./components/RegistrationComponent/RegistrationComponent";
 import LoginComponent from "./components/LoginComponent/LoginComponent";
+import ProfileComp from "./components/ProfileComponent/ProfileComp";
 const App = () => {
   return (
     <Router basename="/">
@@ -23,6 +24,11 @@ const App = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
+            <Nav.Link>
+                <NavLink className="nav-link" to="/profile">
+                  Профиль
+                </NavLink>
+              </Nav.Link>
               <Nav.Link>
                 <NavLink className="nav-link" to="/">
                   Основная страница
@@ -50,6 +56,7 @@ const App = () => {
 
       <Routes>
         {/* <Route path="/" element={<MainComponent />} /> */}
+        <Route path="/profile" element={<ProfileComp />}></Route>
         <Route path="/aboutus" element={<AboutComponent />} />
         <Route path="/register" element={<RegistrationComponent />} />
         <Route path="/login" element={<LoginComponent />} />
