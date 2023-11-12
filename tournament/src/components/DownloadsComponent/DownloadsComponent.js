@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Container, Button } from "react-bootstrap";
 import { downloadGame } from "../../redux/actions/actions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faWindows,
+  faApple,
+  faLinux,
+} from "@fortawesome/free-brands-svg-icons";
 
 const DownloadsComponent = ({ downloadGame }) => {
   const [os, setOs] = useState("unknown");
@@ -22,7 +28,20 @@ const DownloadsComponent = ({ downloadGame }) => {
     };
 
     detectOS();
-  }, []); 
+  }, []);
+
+  const getOsIcon = () => {
+    switch (os) {
+      case "windows":
+        return <FontAwesomeIcon icon={faWindows} />;
+      case "macos":
+        return <FontAwesomeIcon icon={faApple} />;
+      case "linux":
+        return <FontAwesomeIcon icon={faLinux} />;
+      default:
+        return null;
+    }
+  };
 
   const handleDownload = () => {
     downloadGame(os);
@@ -33,15 +52,11 @@ const DownloadsComponent = ({ downloadGame }) => {
       <Button variant="primary" type="submit" onClick={handleDownload}>
         {os !== "unknown" && (
           <>
-            <img
-              src={`path-to-icon-folder/${os}-icon.png`} // здесь должен быть путь с иконкой операционной системы
-              alt={`${os} icon`}
-              style={{ marginRight: "8px" }}
-            />
+            {getOsIcon()}
             Скачать игру
           </>
         )}
-        {os === "unknown" && "Скачать игру"}
+        {os === "unknown" && " Скачать игру"}
       </Button>
     </Container>
   );
