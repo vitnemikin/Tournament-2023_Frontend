@@ -13,7 +13,7 @@ import {
 } from "react-router-dom";
 import RegistrationComponent from "./components/RegistrationComponent/RegistrationComponent";
 import LoginComponent from "./components/LoginComponent/LoginComponent";
-import ProfileComp from "./components/ProfileComponent/ProfileComp";
+import ProfileComponent from "./components/ProfileComponent/ProfileComponent";
 import DownloadsComponent from "./components/DownloadsComponent/DownloadsComponent";
 const App = () => {
   return (
@@ -62,7 +62,7 @@ const App = () => {
 
       <Routes>
         {/* <Route path="/" element={<MainComponent />} /> */}
-        <Route path="/profile" element={<ProfileComp />}></Route>
+        <Route path="/profile" element={<ProfileComponent />}></Route>
         <Route path="/aboutus" element={<AboutComponent />} />
         <Route path="/register" element={<RegistrationComponent />} />
         <Route path="/login" element={<LoginComponent />} />

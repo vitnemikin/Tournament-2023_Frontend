@@ -25,7 +25,7 @@ const RegistrationComponent = ({registerUser}) => {
           <Form.Label>Электронная почта</Form.Label>
           <Form.Control type="email" placeholder="Введите ваш e-mail адрес " id="registrationEmail"/>
           <Form.Text className="text-muted">
-            Мы никогда не поделимся вашим мейл адресом с сторонними лицами
+            Мы никогда не передадим ваши данные сторонним лицам
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicUsername">

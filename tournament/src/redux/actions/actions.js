@@ -53,18 +53,26 @@ export function loginUser(username, password) {
   };
 }
 
-
 export function downloadGame(os) {
+  console.log("операционка: " + os)
   return (dispatch) => {
     fetch(`/downloads/${os}`, {
       method: "GET",
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data) => {
         dispatch({
           type: "DOWNLOAD_GAME",
           downloadData: data,
         });
       })
+      .catch((error) => {
+        console.error("Error during downloadGame:", error);
+      });
   };
 }

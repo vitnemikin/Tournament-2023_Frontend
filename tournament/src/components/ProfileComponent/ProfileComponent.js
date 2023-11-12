@@ -1,5 +1,7 @@
 
 import { Card, Container, Row, Col, Stack, ListGroup, ListGroupItem } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { connect } from "react-redux";
 
 const ProfileComponent = () => {
   return (

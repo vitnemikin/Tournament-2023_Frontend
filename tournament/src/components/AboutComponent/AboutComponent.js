@@ -1,4 +1,6 @@
 import { Card, Container, Row, Col } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { connect } from "react-redux";
 
 const AboutComponent = () => {
   return(
