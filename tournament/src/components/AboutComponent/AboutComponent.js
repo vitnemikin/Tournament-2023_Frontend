@@ -5,4 +5,12 @@ const AboutComponent = () => {
     <Container></Container>
   )
 };
-export default AboutComponent;
+
+
+const mapStateToProps = (state) => {
+  return {};
+};
+
+const mapDispatchToProps = { };
+
+export default connect(mapStateToProps, mapDispatchToProps)(AboutComponent);

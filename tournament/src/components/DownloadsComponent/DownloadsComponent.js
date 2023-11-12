@@ -1,36 +1,56 @@
-import { Card, Container, Row, Col } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-
+import { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { Container, Button } from "react-bootstrap";
 import { downloadGame } from "../../redux/actions/actions";
 
-const DownloadsComponent = (downloadGame) => {
-  const detectOS = () => {
-    const userAgent = window.navigator.userAgent.toLowerCase();
+const DownloadsComponent = ({ downloadGame }) => {
+  const [os, setOs] = useState("unknown");
 
-    if (userAgent.indexOf("win") !== -1) {
-      return "windows";
-    } else if (userAgent.indexOf("mac") !== -1) {
-      return "macos";
-    } else if (userAgent.indexOf("linux") !== -1) {
-      return "linux";
-    }
+  useEffect(() => {
+    const detectOS = () => {
+      const userAgent = window.navigator.userAgent.toLowerCase();
 
-    return "unknown";
-  };
+      if (userAgent.indexOf("win") !== -1) {
+        setOs("windows");
+      } else if (userAgent.indexOf("mac") !== -1) {
+        setOs("macos");
+      } else if (userAgent.indexOf("linux") !== -1) {
+        setOs("linux");
+      } else {
+        setOs("unknown");
+      }
+    };
+
+    detectOS();
+  }, []); 
 
   const handleDownload = () => {
-    const os = detectOS();
-
     downloadGame(os);
   };
 
   return (
     <Container>
       <Button variant="primary" type="submit" onClick={handleDownload}>
-        Скачать игру
+        {os !== "unknown" && (
+          <>
+            <img
+              src={`path-to-icon-folder/${os}-icon.png`} // здесь должен быть путь с иконкой операционной системы
+              alt={`${os} icon`}
+              style={{ marginRight: "8px" }}
+            />
+            Скачать игру
+          </>
+        )}
+        {os === "unknown" && "Скачать игру"}
       </Button>
     </Container>
   );
 };
 
-export default DownloadsComponent;
+const mapStateToProps = (state) => {
+  return {};
+};
+
+const mapDispatchToProps = { downloadGame };
+
+export default connect(mapStateToProps, mapDispatchToProps)(DownloadsComponent);

@@ -1,7 +1,7 @@
 
 import { Card, Container, Row, Col, Stack, ListGroup, ListGroupItem } from "react-bootstrap";
 
-const ProfileComp = () => {
+const ProfileComponent = () => {
   return (
     <Container>
     <Row>Ваш профиль</Row>
@@ -17,4 +17,10 @@ const ProfileComp = () => {
 
 }
 
-export default ProfileComp;
+const mapStateToProps = (state) => {
+  return {};
+};
+
+const mapDispatchToProps = { };
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileComponent);
