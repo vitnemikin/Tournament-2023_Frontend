@@ -1,9 +1,12 @@
 
 import { Card, Container, Row, Col } from "react-bootstrap";
 
-const MainComponent = () => (
-  <Container>
-  </Container>
-);
+const MainComponent = () => {
+  return (
+    <Container>
+      
+    </Container>
+  )
+}
 
 export default MainComponent;

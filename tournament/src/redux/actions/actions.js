@@ -52,3 +52,19 @@ export function loginUser(username, password) {
       });
   };
 }
+
+
+export function downloadGame(os) {
+  return (dispatch) => {
+    fetch(`/downloads/${os}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch({
+          type: "DOWNLOAD_GAME",
+          downloadData: data,
+        });
+      })
+  };
+}

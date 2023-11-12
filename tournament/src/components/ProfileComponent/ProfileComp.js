@@ -1,8 +1,9 @@
 
 import { Card, Container, Row, Col, Stack, ListGroup, ListGroupItem } from "react-bootstrap";
 
-const ProfileComp = () => (
-  <Container>
+const ProfileComp = () => {
+  return (
+    <Container>
     <Row>Ваш профиль</Row>
     <ListGroup>
         <ListGroupItem>Имя</ListGroupItem>
@@ -11,6 +12,9 @@ const ProfileComp = () => (
         <ListGroupItem>Рейтинг</ListGroupItem>
     </ListGroup>
   </Container>
-);
+  )
+
+
+}
 
 export default ProfileComp;

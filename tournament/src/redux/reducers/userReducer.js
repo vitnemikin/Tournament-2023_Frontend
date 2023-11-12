@@ -19,6 +19,11 @@ const userReducer = (state = { userData: {}, error: null }, action) => {
         ...state,
         error: action.error,
       };
+    case "DOWNLOAD_GAME":
+      return {
+        ...state,
+        downloadData: action.downloadData
+      }
     default:
       return state;
   }

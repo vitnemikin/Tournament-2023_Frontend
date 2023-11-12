@@ -14,6 +14,7 @@ import {
 import RegistrationComponent from "./components/RegistrationComponent/RegistrationComponent";
 import LoginComponent from "./components/LoginComponent/LoginComponent";
 import ProfileComp from "./components/ProfileComponent/ProfileComp";
+import DownloadsComponent from "./components/DownloadsComponent/DownloadsComponent";
 const App = () => {
   return (
     <Router basename="/">
@@ -25,13 +26,18 @@ const App = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
             <Nav.Link>
+                <NavLink className="nav-link" to="/">
+                  Основная страница
+                </NavLink>
+              </Nav.Link>
+            <Nav.Link>
                 <NavLink className="nav-link" to="/profile">
                   Профиль
                 </NavLink>
               </Nav.Link>
               <Nav.Link>
-                <NavLink className="nav-link" to="/">
-                  Основная страница
+                <NavLink className="nav-link" to="/downloads">
+                  Загрузки
                 </NavLink>
               </Nav.Link>
               <Nav.Link>
@@ -60,6 +66,7 @@ const App = () => {
         <Route path="/aboutus" element={<AboutComponent />} />
         <Route path="/register" element={<RegistrationComponent />} />
         <Route path="/login" element={<LoginComponent />} />
+        <Route path="/downloads" element={<DownloadsComponent />} />
       </Routes>
     </Router>
   );
