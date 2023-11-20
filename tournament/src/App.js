@@ -30,11 +30,11 @@ const App = () => {
                   Основная страница
                 </NavLink>
               </Nav.Link>
-            <Nav.Link>
+            {/* <Nav.Link>
                 <NavLink className="nav-link" to="/profile">
                   Профиль
                 </NavLink>
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link>
                 <NavLink className="nav-link" to="/downloads">
                   Загрузки
