@@ -35,7 +35,7 @@ jobs:
                 with:
                     flags: '-avc --delete'
                     src: './tournament/build/'
-                    dest: '"${{secrets.DEPLOY_USER}}"@"${{secrets.DEPLOY_HOST}}":~/autodeploy/frontend/'
+                    dest: '"${{secrets.DEPLOY_USER}}"@"${{secrets.DEPLOY_HOST}}":~/autodeploy/backend/public/'
  
             -   name: Display status from deploy
                 run: echo "${{ steps.deploy.outputs.status }}"
