@@ -1,0 +1,42 @@
+name: Deploy
+ 
+on:
+    push:
+        tags:
+            - 'v*' # Срабатывает при создании тега начинающегося с 'v'
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+        steps:
+            -   name: Checkout repository
+                uses: actions/checkout@master
+
+            -   run: sudo apt-get install rsync
+ 
+            -   name: Setup Node.js
+                uses: actions/setup-node@master
+                with:
+                  node-version: '20'
+            
+            -   name: Enter to project dir
+                run: cd tournament
+
+            -   name: Install dependencies
+                run: npm install
+
+            -   name: Build
+                run: npm run build
+            
+            -   name: Deploy to server
+                id: deploy_auto
+                uses: Pendect/action-rsyncer@v1.1.0
+                env:
+                    DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
+                with:
+                    flags: '-avc --delete'
+                    src: 'build/'
+                    dest: '"${{secrets.DEPLOY_USER}}"@"${{secrets.DEPLOY_HOST}}":~/autodeploy/frontend/'
+ 
+            -   name: Display status from deploy
+                run: echo "${{ steps.deploy.outputs.status }}"
