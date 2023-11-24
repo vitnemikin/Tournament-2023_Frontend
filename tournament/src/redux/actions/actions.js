@@ -27,9 +27,35 @@ export function registerUser(userData) {
   };
 }
 
-export function loginUser(username, password) {
+export function confirmUser(username, password) {
   return (dispatch) => {
     fetch(`auth/${username}/confirm?token`, {
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch({
+          type: "CONFIRM_USER_SUCCESS",
+          userData: data,
+        });
+      })
+      .catch((error) => {
+        console.error("Ошибка при входе пользователя", error);
+        dispatch({
+          type: "CONFIRM_USER_ERROR",
+          error,
+        });
+      });
+  };
+}
+
+export function loginUser(username, password) {
+  return (dispatch) => {
+    fetch(`auth/${username}`, {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: {
@@ -56,7 +82,7 @@ export function loginUser(username, password) {
 export function downloadGame(os) {
   console.log("операционка: " + os)
   return (dispatch) => {
-    fetch(`/downloads/${os}`, {
+    fetch(`user/downloads/${os}`, {
       method: "GET",
     })
       .then((response) => {
