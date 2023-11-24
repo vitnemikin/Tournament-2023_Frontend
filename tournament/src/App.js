@@ -9,7 +9,7 @@ import {
   Route,
   Routes,
   NavLink,
-  Link,
+  //Link,
 } from "react-router-dom";
 import RegistrationComponent from "./components/RegistrationComponent/RegistrationComponent";
 import LoginComponent from "./components/LoginComponent/LoginComponent";

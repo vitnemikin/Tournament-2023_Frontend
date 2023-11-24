@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { React } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -8,6 +8,7 @@ import {registerUser} from "../../redux/actions/actions";
 
 
 const RegistrationComponent = ({registerUser}) => {
+  // eslint-disable-next-line
   const dispatch = useDispatch();
 
   return (
