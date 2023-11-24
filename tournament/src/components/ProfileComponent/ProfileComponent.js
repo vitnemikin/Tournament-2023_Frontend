@@ -2,6 +2,7 @@
 import { Card, Container, Row, Col, Stack, ListGroup, ListGroupItem } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
+import { React } from "react";
 
 const ProfileComponent = () => {
   return (
