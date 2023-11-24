@@ -19,13 +19,12 @@ jobs:
                 with:
                   node-version: '20'
             
-            -   name: Enter to project dir
-                run: cd tournament
-
             -   name: Install dependencies
+                working-directory: ./tournament
                 run: npm install
 
             -   name: Build
+                working-directory: ./tournament
                 run: npm run build
             
             -   name: Deploy to server
@@ -35,7 +34,7 @@ jobs:
                     DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
                 with:
                     flags: '-avc --delete'
-                    src: 'build/'
+                    src: './tournament/build/'
                     dest: '"${{secrets.DEPLOY_USER}}"@"${{secrets.DEPLOY_HOST}}":~/autodeploy/frontend/'
  
             -   name: Display status from deploy
