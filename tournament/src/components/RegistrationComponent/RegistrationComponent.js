@@ -63,7 +63,9 @@ const RegistrationComponent = ({registerUser}) => {
 };
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    state
+  };
 };
 
 const mapDispatchToProps = { registerUser };

@@ -1,5 +1,6 @@
 
-import { Container, Row, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Row, ListGroup, ListGroupItem } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
 import { connect } from "react-redux";
 import { React } from "react";
 

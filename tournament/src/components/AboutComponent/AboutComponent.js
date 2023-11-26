@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
 //import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
 import { React } from "react";

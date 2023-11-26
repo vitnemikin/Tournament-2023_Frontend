@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { Container, Button } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
+import { Button } from "react-bootstrap";
 import { downloadGame } from "../../redux/actions/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

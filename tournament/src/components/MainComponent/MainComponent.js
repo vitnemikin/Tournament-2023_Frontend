@@ -1,5 +1,5 @@
 
-import { Card, Container, Row, Col } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
 
 const MainComponent = () => {
   return (
