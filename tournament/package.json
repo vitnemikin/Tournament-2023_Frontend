@@ -2,6 +2,7 @@
   "name": "tournament.itstep",
   "author": "ynmann",
   "version": "0.1.0",
+  "homepage": "/",
   "description": "Itstep tournament 2023",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
