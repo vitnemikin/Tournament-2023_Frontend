@@ -5,8 +5,6 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  NavLink,
-  //Link,
 } from "react-router-dom";
 import RegistrationComponent from "./components/RegistrationComponent/RegistrationComponent";
 import LoginComponent from "./components/LoginComponent/LoginComponent";

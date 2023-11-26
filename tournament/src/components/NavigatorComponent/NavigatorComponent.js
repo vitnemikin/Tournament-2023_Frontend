@@ -3,14 +3,9 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
 import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
   NavLink,
-  Link,
 } from "react-router-dom";
 
 const NavigatorComponent = (state) => {
@@ -70,6 +65,6 @@ function mapStateToProps(state) {
   return { isLoggedIn, isAdmin };
 }
 
-function mapDispatchToProps() {}
+// function mapDispatchToProps() {}
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavigatorComponent);
+export default connect(mapStateToProps)(NavigatorComponent);
