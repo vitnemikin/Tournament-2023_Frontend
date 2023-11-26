@@ -80,11 +80,9 @@ export function loginUser(username, password) {
 }
 
 export function downloadGame(os) {
-  console.log("операционка: " + os)
+  console.log("операционка: " + os);
   return (dispatch) => {
-    fetch(`user/downloads/${os}`, {
-      method: "GET",
-    })
+    fetch(`/downloads/${os}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
