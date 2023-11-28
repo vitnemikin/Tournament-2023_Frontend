@@ -67,17 +67,18 @@ export function loginUser(login, password) {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        dispatch({
-          type: "LOGIN_USER_SUCCESS",
-          userData: data,
-        });
-      })
-      .catch((error) => {
-        console.error("Ошибка при входе пользователя", error);
-        dispatch({
-          type: "LOGIN_USER_ERROR",
-          error,
-        });
+        if (data.statusCode !== 200) {
+          dispatch({
+            type: "LOGIN_USER_SUCCESS",
+            userData: data,
+          });
+        } else {
+          console.error("Ошибка при входе пользователя", error);
+          dispatch({
+            type: "LOGIN_USER_ERROR",
+            error,
+          });
+        }
       });
   };
 }
