@@ -79,8 +79,8 @@ const RegistrationComponent = ({ registerUser }) => {
                 ).value;
 
                 const userData = {
-                  firstName: name,
-                  lastName: lastName,
+                  first_name: name,
+                  last_name: lastName,
                   email: email,
                   login: username,
                   password: password,

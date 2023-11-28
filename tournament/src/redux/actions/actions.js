@@ -1,4 +1,5 @@
 export function registerUser(userData) {
+  console.log(userData);
   return (dispatch) => {
     // Здесь мы выполняем асинхронный HTTP-запрос, отправляя данные на сервер с использованием fetch
     fetch("/auth/registration", {
