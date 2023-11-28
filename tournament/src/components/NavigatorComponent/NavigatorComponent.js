@@ -1,60 +1,62 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { Image } from "react-bootstrap";
 import { connect } from "react-redux";
-import {
-  NavLink,
-} from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "../../styles.scss";
 
 const NavigatorComponent = (state) => {
   return (
-    <Navbar expand="lg">
-      <Container>
-        <Navbar.Brand></Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link>
-              <NavLink className="nav-link" to="/">
-                Основная страница
-              </NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink className="nav-link" to="/downloads">
-                Загрузки
-              </NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink className="nav-link" to="/aboutus">
-                О нас
-              </NavLink>
-            </Nav.Link>
-            {state.isLoggedIn ? (
-              <>
-                <Nav.Link>
-                  <NavLink className="nav-link" to="/profile">
-                    Профиль
-                  </NavLink>
-                </Nav.Link>
-              </>
-            ) : (
-              <>
-                <Nav.Link>
-                  <NavLink className="nav-link" to="/register">
-                    Регистрация
-                  </NavLink>
-                </Nav.Link>
-                <Nav.Link>
-                  <NavLink className="nav-link" to="/login">
-                    Логин
-                  </NavLink>
-                </Nav.Link>
-              </>
-            )}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
+    <Navbar expand="lg" className="navBar">
+      <Navbar.Brand></Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Image src="./rugby.png" className="col-1" />
+        <div style={{ flexBasis: "25%" }}>
+          <h4>Академия Шаг</h4>
+        </div>
+        <Nav className="me-auto ms-2">
+          <Nav.Link>
+            <NavLink className="nav-link" to="/">
+              Основная страница
+            </NavLink>
+          </Nav.Link>
+          <Nav.Link>
+            <NavLink className="nav-link" to="/downloads">
+              Загрузки
+            </NavLink>
+          </Nav.Link>
+          <Nav.Link>
+            <NavLink className="nav-link" to="/aboutus">
+              О нас
+            </NavLink>
+          </Nav.Link>
+          {state.isLoggedIn ? (
+            <>
+              <Nav.Link>
+                <NavLink className="nav-link" to="/profile">
+                  Профиль
+                </NavLink>
+              </Nav.Link>
+            </>
+          ) : (
+            <>
+              <Nav.Link>
+                <NavLink className="nav-link" to="/login">
+                  Войти
+                </NavLink>
+              </Nav.Link>
+            </>
+          )}
+        </Nav>
+        <NavDropdown title="Язык" id="language-dropdown" className="col-2 drop">
+          <NavDropdown.Item>Русский</NavDropdown.Item>
+          <NavDropdown.Item>Казах</NavDropdown.Item>
+          <NavDropdown.Item>English</NavDropdown.Item>
+        </NavDropdown>
+      </Navbar.Collapse>
     </Navbar>
   );
 };

@@ -11,6 +11,7 @@ import LoginComponent from "./components/LoginComponent/LoginComponent";
 import ProfileComponent from "./components/ProfileComponent/ProfileComponent";
 import DownloadsComponent from "./components/DownloadsComponent/DownloadsComponent";
 import NavigatorComponent from "./components/NavigatorComponent/NavigatorComponent";
+import './styles.scss';
 
 const App = () => {
   return (

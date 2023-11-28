@@ -1,0 +1,81 @@
+$bg-color: #141e2b;
+$secondary-color: #222f3f;
+$font-color: #fcac0a;
+$input-color: #79612a !important;
+$font-main: "Inter", sans-serif;
+
+body {
+  background-color: $bg-color;
+  font-family: $font-main;
+}
+
+.regforms input,
+button {
+  background-color: $input-color;
+  border: none !important;
+  box-shadow: black !important;
+}
+
+.loginBtn {
+    background-color: $input-color;
+    border: none !important;
+    box-shadow: black !important;
+}
+
+.loginforms input, button {
+      background-color: $input-color;
+  border: none !important;
+  box-shadow: black !important;
+}
+
+.loginforms button:hover {
+    background-color: $font-color!important;
+    color: $bg-color!important;
+}
+.loginforms input:not(:placeholder-shown) {
+    background-color: $font-color !important;
+  }
+
+.navBar {
+  background-color: $secondary-color;
+}
+
+.regforms button {
+  color: $font-color !important;
+}
+
+.regforms button:hover {
+    background-color: $font-color!important;
+    color: $bg-color!important;
+}
+
+.regforms input:not(:placeholder-shown) {
+  background-color: $font-color !important;
+}
+
+.mutedcolor {
+  color: $font-color !important;
+}
+
+.navBar * {
+  color: $font-color;
+}
+
+.cardRegistration {
+  background-color: $secondary-color;
+  align-items: center;
+  color: $font-color;
+}
+
+.cardRegistration img {
+  width: 10%;
+}
+
+.drop div {
+    background-color: $font-color;
+    a {
+        color: $bg-color!important;
+    }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
