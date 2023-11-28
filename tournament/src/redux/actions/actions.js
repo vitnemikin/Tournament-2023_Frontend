@@ -8,9 +8,11 @@ export function registerUser(userData) {
         "Content-Type": "application/json",
       },
     })
+      .then(console.log("успешно отправлен запрос"))
       .then((response) => response.json())
       .then((data) => {
         // Если наш запрос успешен - диспатчим действие для обновления состояния
+        console.log("USPEH")
         dispatch({
           type: "REGISTER_USER_SUCCESS",
           userData: data,
@@ -53,17 +55,18 @@ export function confirmUser(username, password) {
   };
 }
 
-export function loginUser(username, password) {
+export function loginUser(login, password) {
   return (dispatch) => {
-    fetch(`/auth/${username}`, {
+    fetch(`/auth/login`, {
       method: "POST",
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ login, password }),
       headers: {
         "Content-Type": "application/json",
       },
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         dispatch({
           type: "LOGIN_USER_SUCCESS",
           userData: data,

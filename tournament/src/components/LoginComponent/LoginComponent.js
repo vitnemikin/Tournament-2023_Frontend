@@ -9,11 +9,11 @@ import { redirect } from "react-router-dom";
 const LoginComponent = ({ loginUser }) => {
   const handleLogin = () => {
     let loginData = {
-      username: document.getElementById("#loginUsername").value,
-      password: document.getElementById("#loginPassword").value,
+      login: document.getElementById("loginUsername").value,
+      password: document.getElementById("loginPassword").value,
     };
 
-    loginUser(loginData.username, loginData.password);
+    loginUser(loginData.login, loginData.password);
 
      redirect("/profile");
   };
@@ -36,7 +36,7 @@ const LoginComponent = ({ loginUser }) => {
             id="loginPassword"
           />
         </Form.Group>
-        <Button variant="primary" type="submit" onClick={handleLogin}>
+        <Button variant="primary" type="button" onClick={handleLogin}>
           Войти
         </Button>
       </Form>

@@ -6,14 +6,14 @@ import Container from 'react-bootstrap/Container';
 import { connect } from "react-redux";
 import { React } from "react";
 
-const ProfileComponent = () => {
+const ProfileComponent = (state) => {
   return (
     <Container>
     <Row>Ваш профиль</Row>
     <ListGroup>
-        <ListGroupItem>Имя</ListGroupItem>
-        <ListGroupItem>Фамилия</ListGroupItem>
-        <ListGroupItem>Отчество</ListGroupItem>
+        <ListGroupItem>Имя: {state.userData.name}</ListGroupItem>
+        <ListGroupItem>Фамилия: {state.userData.lastName}</ListGroupItem>
+        <ListGroupItem>Имейл: {state.userData.email}</ListGroupItem>
         <ListGroupItem>Рейтинг</ListGroupItem>
     </ListGroup>
   </Container>
@@ -23,7 +23,11 @@ const ProfileComponent = () => {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+
+    const {userData} = state;
+
+    return userData;
+    
 };
 
 const mapDispatchToProps = { };

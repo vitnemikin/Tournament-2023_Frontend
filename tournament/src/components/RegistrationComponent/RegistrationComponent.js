@@ -38,7 +38,7 @@ const RegistrationComponent = ({registerUser}) => {
           <Form.Label>Пароль</Form.Label>
           <Form.Control type="password" placeholder="Введите пароль" id="registrationPassword"/>
         </Form.Group>
-        <Button variant="primary" type="submit" onClick={() => {
+        <Button variant="primary" type="button" onClick={() => {
             let email = document.querySelector('#registrationEmail').value;
             let name = document.querySelector('#registrationName').value;
             let lastName = document.querySelector('#registrationlastName').value;
@@ -50,7 +50,7 @@ const RegistrationComponent = ({registerUser}) => {
               lastName: lastName,
               email: email,
               login: username,
-              passw: password,
+              password: password,
             };
 
             registerUser(userData);
