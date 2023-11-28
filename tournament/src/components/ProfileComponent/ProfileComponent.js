@@ -13,8 +13,7 @@ const ProfileComponent = (state) => {
     <ListGroup>
         <ListGroupItem>Имя: {state.userData.name}</ListGroupItem>
         <ListGroupItem>Фамилия: {state.userData.lastName}</ListGroupItem>
-        <ListGroupItem>Имейл: {state.userData.email}</ListGroupItem>
-        <ListGroupItem>Рейтинг</ListGroupItem>
+        <ListGroupItem>Мейл: {state.userData.email}</ListGroupItem>
     </ListGroup>
   </Container>
   )
