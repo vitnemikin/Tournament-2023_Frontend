@@ -12,7 +12,7 @@ export function registerUser(userData) {
       .then((response) => response.json())
       .then((data) => {
         // Если наш запрос успешен - диспатчим действие для обновления состояния
-        console.log("USPEH")
+        console.log("данные успешно получены,", data);
         dispatch({
           type: "REGISTER_USER_SUCCESS",
           userData: data,
@@ -57,7 +57,7 @@ export function confirmUser(username, password) {
 
 export function loginUser(login, password) {
   return (dispatch) => {
-    fetch(`/auth/login`, {
+    fetch(`/auth/login/${login}`, {
       method: "POST",
       body: JSON.stringify({ login, password }),
       headers: {
