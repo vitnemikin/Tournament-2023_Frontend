@@ -73,13 +73,14 @@ export function loginUser(login, password) {
             userData: data,
           });
         } else {
-          console.error("Ошибка при входе пользователя", error);
-          dispatch({
-            type: "LOGIN_USER_ERROR",
-            error,
-          });
+            console.error("Ошибка при входе пользователя: ", data.statusCode);
+        dispatch({
+          type: "LOGIN_USER_ERROR",
+          error,
+        });
+
         }
-      });
+      })
   };
 }
 
