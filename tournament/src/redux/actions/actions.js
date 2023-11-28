@@ -29,7 +29,7 @@ export function registerUser(userData) {
 
 export function confirmUser(username, password) {
   return (dispatch) => {
-    fetch(`auth/${username}/confirm?token`, {
+    fetch(`/auth/${username}/confirm?token`, {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: {
@@ -55,7 +55,7 @@ export function confirmUser(username, password) {
 
 export function loginUser(username, password) {
   return (dispatch) => {
-    fetch(`auth/${username}`, {
+    fetch(`/auth/${username}`, {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: {

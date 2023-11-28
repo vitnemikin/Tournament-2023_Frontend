@@ -1,12 +1,11 @@
-
-import Container from 'react-bootstrap/Container';
+import React from "react";
 
 const MainComponent = () => {
   return (
-    <Container>
-      
-    </Container>
-  )
-}
+    <div>
+      <h1>HELLO WORLD</h1>
+    </div>
+  );
+};
 
 export default MainComponent;

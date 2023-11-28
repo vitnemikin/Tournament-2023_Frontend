@@ -1,5 +1,5 @@
 import { React } from "react";
-import { Container } from "react-bootstrap";
+import  Container  from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
@@ -64,7 +64,7 @@ const RegistrationComponent = ({registerUser}) => {
 
 const mapStateToProps = (state) => {
   return {
-    state
+    ...state
   };
 };
 

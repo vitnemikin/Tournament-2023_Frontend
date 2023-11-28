@@ -1,19 +1,15 @@
-import Container from 'react-bootstrap/Container';
-//import { useDispatch } from "react-redux";
+import Container from "react-bootstrap/Container";
 import { connect } from "react-redux";
-import { React } from "react";
+import React from "react";
 
 const AboutComponent = () => {
-  return(
-    <Container></Container>
-  )
+  return <Container></Container>;
 };
-
 
 const mapStateToProps = (state) => {
   return {};
 };
 
-const mapDispatchToProps = { };
+const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AboutComponent);
