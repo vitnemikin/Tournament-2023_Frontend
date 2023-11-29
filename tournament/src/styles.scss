@@ -45,6 +45,11 @@ body {
   background-color: $font-color !important;
 }
 
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: $bg-color!important;
+  color: $font-color!important;
+}
+
 .navBar {
   background-color: $secondary-color;
 }
