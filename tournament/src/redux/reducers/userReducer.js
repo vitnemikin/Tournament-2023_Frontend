@@ -21,6 +21,7 @@ const userReducer = (
     case "LOGIN_USER_ERROR":
       return {
         ...state,
+        isLoggedIn: false,
         error: action.error,
       };
     case "CONFIRM_USER_SUCCESS":

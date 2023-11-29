@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "../../styles.scss";
 
-const NavigatorComponent = (state) => {
+const NavigatorComponent = (isLoggedIn) => {
   return (
     <Navbar expand="lg" className="navBar">
       <Navbar.Brand></Navbar.Brand>
@@ -28,7 +28,7 @@ const NavigatorComponent = (state) => {
               Загрузки
             </NavLink>
           </Nav.Link>
-          {state.isLoggedIn ? (
+          {isLoggedIn ? (
             <>
               <Nav.Link>
                 <NavLink className="nav-link" to="/profile">
