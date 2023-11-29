@@ -16,13 +16,16 @@ const userReducer = (
         ...state,
         userData: action.userData,
         error: null,
-        isLoggedIn: true,
       };
     case "LOGIN_USER_ERROR":
       return {
         ...state,
         error: action.error,
       };
+    case "CONFIRM_USER_SUCCESS":
+      return {
+        ...state
+      }
     default:
       return state;
   }

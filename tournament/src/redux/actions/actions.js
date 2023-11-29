@@ -43,7 +43,6 @@ export function confirmUser(username, password) {
       .then((data) => {
         dispatch({
           type: "CONFIRM_USER_SUCCESS",
-          userData: data,
         });
       })
       .catch((error) => {
