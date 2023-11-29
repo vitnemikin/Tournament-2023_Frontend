@@ -13,8 +13,8 @@ const NavigatorComponent = (state) => {
       <Navbar.Brand></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Image src="./rugby.png" className="col-1" />
-        <div style={{ flexBasis: "25%" }}>
+        <Image src="./rugby.png" style={{width: '5%'}} />
+        <div style={{ flexBasis: "25%", marginTop: '60px' }}>
           <h4>Академия Шаг</h4>
         </div>
         <Nav className="me-auto ms-2">

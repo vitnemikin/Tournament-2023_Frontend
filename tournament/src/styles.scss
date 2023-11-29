@@ -17,24 +17,26 @@ button {
 }
 
 .loginBtn {
-    background-color: $input-color;
-    border: none !important;
-    box-shadow: black !important;
-}
-
-.loginforms input, button {
-      background-color: $input-color;
+  background-color: $input-color;
   border: none !important;
   box-shadow: black !important;
 }
 
+.loginforms input,
+button {
+  background-color: $input-color;
+  border: none !important;
+  box-shadow: black !important;
+  color: $font-color!important;
+}
+
 .loginforms button:hover {
-    background-color: $font-color!important;
-    color: $bg-color!important;
+  background-color: $font-color !important;
+  color: $bg-color !important;
 }
 .loginforms input:not(:placeholder-shown) {
-    background-color: $font-color !important;
-  }
+  background-color: $font-color !important;
+}
 
 .navBar {
   background-color: $secondary-color;
@@ -45,8 +47,8 @@ button {
 }
 
 .regforms button:hover {
-    background-color: $font-color!important;
-    color: $bg-color!important;
+  background-color: $font-color !important;
+  color: $bg-color !important;
 }
 
 .regforms input:not(:placeholder-shown) {
@@ -71,11 +73,80 @@ button {
   width: 10%;
 }
 
-.drop div {
-    background-color: $font-color;
-    a {
-        color: $bg-color!important;
-    }
+.cardMain {
+  background-color: $secondary-color;
+  align-items: center;
+  color: $font-color;
+  img {
+    width: 75%;
+  }
 }
+
+.drop div {
+  background-color: $font-color;
+  a {
+    color: $bg-color !important;
+  }
+}
+
+// Общие стили для футера
+
+.container-fluid {
+  padding-top: 20px; // Добавьте отступ сверху
+}
+
+// Стили для нового контента
+.footer-new__top-column {
+  text-align: center;
+  margin-top: 20px; // Отступ сверху
+}
+
+.top-column__item-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.top-column__title {
+  margin-right: 10px;
+}
+
+.top-column__item-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.top-column__item {
+  margin-bottom: 10px;
+}
+
+.top-column__link {
+  color: #fcac0a; // Замените цветом вашего шрифта
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.top-column__link:hover {
+  text-decoration: underline;
+}
+
+// Стили для полоски и текста внизу
+.footer-line {
+  margin-top: 20px; // Отступ сверху
+  border-top: 1px solid #fcac0a; // Замените цветом вашего шрифта
+}
+
+.footr {
+  margin-top: 50px;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Минимальная высота равная высоте видимого экрана
+}
+
+// Стили для текста внизу
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");

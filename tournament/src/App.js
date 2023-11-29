@@ -11,12 +11,14 @@ import LoginComponent from "./components/LoginComponent/LoginComponent";
 import ProfileComponent from "./components/ProfileComponent/ProfileComponent";
 import DownloadsComponent from "./components/DownloadsComponent/DownloadsComponent";
 import NavigatorComponent from "./components/NavigatorComponent/NavigatorComponent";
+import FooterComponent from "./components/FooterComponent/FooterComponent";
 import './styles.scss';
 
 const App = () => {
   return (
     <Router>
-      <NavigatorComponent />
+    <div className="page-wrapper">
+         <NavigatorComponent />
       <Routes>
         <Route path="/" element={<MainComponent />} ></Route>
         <Route path="/profile" element={<ProfileComponent />}></Route>
@@ -25,6 +27,9 @@ const App = () => {
         <Route path="/login" element={<LoginComponent />} />
         <Route path="/downloads" element={<DownloadsComponent />} />
       </Routes>
+      <FooterComponent />
+    </div>
+
     </Router>
   );
 };
