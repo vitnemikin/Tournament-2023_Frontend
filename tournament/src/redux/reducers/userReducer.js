@@ -1,5 +1,5 @@
 const userReducer = (
-  state = { userData: { isLoggedIn: false }, error: null },
+  state = { userData: {name: 'Alan', last_name: 'Altindis', email: 'altindisalan@gmail.com', country: 'KZ',  isLoggedIn: false }, error: null },
   action
 ) => {
   switch (action.type) {
@@ -15,6 +15,7 @@ const userReducer = (
       return {
         ...state,
         userData: action.userData,
+        isLoggedIn: true,
         error: null,
       };
     case "LOGIN_USER_ERROR":
