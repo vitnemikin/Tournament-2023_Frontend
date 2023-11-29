@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "../../styles.scss";
 
-const NavigatorComponent = (isLoggedIn) => {
+const NavigatorComponent = ({isLoggedIn}) => {
   return (
     <Navbar expand="lg" className="navBar">
       <Navbar.Brand></Navbar.Brand>
