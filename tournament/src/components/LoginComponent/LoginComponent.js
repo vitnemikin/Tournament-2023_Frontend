@@ -1,6 +1,6 @@
 import { React } from "react";
 import Container from "react-bootstrap/Container";
-import { Card, CardBody } from "react-bootstrap";
+import { Card, CardBody, Nav } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { NavLink } from "react-router-dom";
@@ -20,7 +20,10 @@ const LoginComponent = ({ loginUser }) => {
     redirect("/profile");
   };
   return (
-    <Container className="d-flex justify-content-center " style={{height: "650px"}}>
+    <Container
+      className="d-flex justify-content-center "
+      style={{ height: "650px" }}
+    >
       <Card className="cardRegistration mt-5 w-50">
         <Card.Img variant="top" src="./rugby.png" className="mt-4" />
         <h2>Войти</h2>
@@ -47,7 +50,9 @@ const LoginComponent = ({ loginUser }) => {
               type="button"
               onClick={handleLogin}
             >
-              Войти
+              <NavLink className="nav-link" to="/profile">
+                Войти
+              </NavLink>
             </Button>
             <Button className="w-100 regbtn mt-3 mb-5" type="button">
               <NavLink className="nav-link" to="/register">
