@@ -30,20 +30,13 @@ export function registerUser(userData) {
   };
 }
 
-export function confirmUser(username, password) {
+export function confirmUser(username, token) {
   return (dispatch) => {
-    fetch(`/auth/${username}/confirm?token`, {
-      method: "POST",
-      body: JSON.stringify({ username, password }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
+    fetch(`/auth/${username}/confirm?${token}`)
+      .then((response) => console.log(response.data.message))
+      .then(() => {
         dispatch({
           type: "CONFIRM_USER_SUCCESS",
-          userData: data
         });
       })
       .catch((error) => {
@@ -72,6 +65,7 @@ export function loginUser(login, password) {
           dispatch({
             type: "LOGIN_USER_SUCCESS",
             userData: data,
+            
           });
         } else {
           console.error("Ошибка при входе пользователя: ", data.statusCode);
