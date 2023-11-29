@@ -57,7 +57,7 @@ export function confirmUser(username, password) {
 
 export function loginUser(login, password) {
   return (dispatch) => {
-    fetch(`/auth/login/${login}`, {
+    fetch(`/auth/login`, {
       method: "POST",
       body: JSON.stringify({ login, password }),
       headers: {

@@ -5,7 +5,6 @@ import {
   Routes,
 } from "react-router-dom";
 import MainComponent from "./components/MainComponent/MainComponent";
-import AboutComponent from "./components/AboutComponent/AboutComponent";
 import RegistrationComponent from "./components/RegistrationComponent/RegistrationComponent";
 import LoginComponent from "./components/LoginComponent/LoginComponent";
 import ProfileComponent from "./components/ProfileComponent/ProfileComponent";
@@ -25,7 +24,6 @@ const App = () => {
       <Routes>
         <Route path="/" element={<MainComponent />} ></Route>
         <Route path="/profile" element={<ProfileComponent />}></Route>
-        <Route path="/aboutus" element={<AboutComponent />} />
         <Route path="/register" element={<RegistrationComponent />} />
         <Route path="/login" element={<LoginComponent />} />
         <Route path="/downloads" element={<DownloadsComponent />} />

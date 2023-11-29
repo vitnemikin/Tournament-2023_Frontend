@@ -30,8 +30,11 @@ body {
     background-color: $input-color;
     border: none !important;
     box-shadow: black !important;
-    color: $font-color !important;
   }
+}
+
+.loginforms button {
+    color: $font-color
 }
 
 .loginforms button:hover {
@@ -143,12 +146,17 @@ body {
 
 .footr {
   margin-top: 50px;
+  position: relative;
 }
 
 .page-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh; // Минимальная высота равная высоте видимого экрана
+}
+
+.closed {
+    display: none!important;
 }
 
 // Стили для текста внизу

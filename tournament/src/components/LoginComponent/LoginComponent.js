@@ -20,7 +20,7 @@ const LoginComponent = ({ loginUser }) => {
     redirect("/profile");
   };
   return (
-    <Container className="d-flex justify-content-center ">
+    <Container className="d-flex justify-content-center " style={{height: "650px"}}>
       <Card className="cardRegistration mt-5 w-50">
         <Card.Img variant="top" src="./rugby.png" className="mt-4" />
         <h2>Войти</h2>

@@ -28,11 +28,6 @@ const NavigatorComponent = (state) => {
               Загрузки
             </NavLink>
           </Nav.Link>
-          <Nav.Link>
-            <NavLink className="nav-link" to="/aboutus">
-              О нас
-            </NavLink>
-          </Nav.Link>
           {state.isLoggedIn ? (
             <>
               <Nav.Link>

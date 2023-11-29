@@ -52,12 +52,14 @@ const DownloadsComponent = ({ downloadGame }) => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper style={{height: "1000px"}}>
     <Draggable>
-      <Window resizable className="window" style={{fontFamily: ms_sans_serif, width: '25%', height: '150px'}}>
+      <Window resizable id="clsbtn" className="window" style={{fontFamily: ms_sans_serif, width: '25%', height: '150px'}}>
         <WindowHeader className="window-title">
           <span>Скачать игру</span>
-          <button style={{ width: "30px",
+          <button onClick={() => {
+            document.querySelector('#clsbtn').classList.add('closed');
+          }}style={{ width: "30px",
     height: "32px"}}>
             <span className="close-icon" />
           </button>
