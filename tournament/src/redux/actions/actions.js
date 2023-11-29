@@ -2,7 +2,7 @@ export function registerUser(userData) {
   console.log(userData);
   return (dispatch) => {
     // Здесь мы выполняем асинхронный HTTP-запрос, отправляя данные на сервер с использованием fetch
-    fetch("/registration", {
+    fetch("/auth/registration", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
@@ -32,7 +32,7 @@ export function registerUser(userData) {
 
 export function confirmUser(username, password) {
   return (dispatch) => {
-    fetch(`${username}/confirm?token`, {
+    fetch(`/auth/${username}/confirm?token`, {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: {
@@ -58,7 +58,7 @@ export function confirmUser(username, password) {
 
 export function loginUser(login, password) {
   return (dispatch) => {
-    fetch(`/login/${login}`, {
+    fetch(`/auth/login/${login}`, {
       method: "POST",
       body: JSON.stringify({ login, password }),
       headers: {

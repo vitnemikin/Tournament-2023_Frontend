@@ -12,10 +12,13 @@ import ProfileComponent from "./components/ProfileComponent/ProfileComponent";
 import DownloadsComponent from "./components/DownloadsComponent/DownloadsComponent";
 import NavigatorComponent from "./components/NavigatorComponent/NavigatorComponent";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
+import {ThemeProvider } from 'styled-components'
 import './styles.scss';
+import original from 'react95/dist/themes/original';
 
 const App = () => {
   return (
+    <ThemeProvider theme={original}>
     <Router>
     <div className="page-wrapper">
          <NavigatorComponent />
@@ -31,6 +34,7 @@ const App = () => {
     </div>
 
     </Router>
+    </ThemeProvider>
   );
 };
 

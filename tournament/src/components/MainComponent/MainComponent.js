@@ -7,7 +7,7 @@ const MainComponent = () => {
   const cardAnimation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    config: config.molasses, // Медленная анимация
+    config: config.molasses, 
   });
 
   return (

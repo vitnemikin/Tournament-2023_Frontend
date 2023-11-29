@@ -1,14 +1,17 @@
-import { React, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import Container from 'react-bootstrap/Container';
-import  Button from "react-bootstrap/Button";
+import { Container } from "react-bootstrap";
 import { downloadGame } from "../../redux/actions/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
+import Draggable from 'react-draggable';
+import Wrapper from "./Wrapper";
 import {
   faWindows,
   faApple,
   faLinux,
 } from "@fortawesome/free-brands-svg-icons";
+import { Window, WindowHeader, WindowContent, Toolbar } from "react95";
 
 const DownloadsComponent = ({ downloadGame }) => {
   const [os, setOs] = useState("unknown");
@@ -49,17 +52,44 @@ const DownloadsComponent = ({ downloadGame }) => {
   };
 
   return (
-    <Container>
-      <Button variant="primary" type="submit" onClick={handleDownload}>
-        {os !== "unknown" && (
-          <>
-            {getOsIcon()}
-            Скачать игру
-          </>
-        )}
-        {os === "unknown" && " Скачать игру"}
-      </Button>
-    </Container>
+    <Wrapper>
+    <Draggable>
+      <Window resizable className="window" style={{fontFamily: ms_sans_serif, width: '25%', height: '150px'}}>
+        <WindowHeader className="window-title">
+          <span>Скачать игру</span>
+          <button style={{ width: "30px",
+    height: "32px"}}>
+            <span className="close-icon" />
+          </button>
+        </WindowHeader>
+        <Toolbar>
+          <button variant="menu" size="sm">
+            File
+          </button>
+          <button variant="menu" size="sm">
+            Edit
+          </button>
+          <button variant="menu" size="sm" disabled>
+            Save
+          </button>
+        </Toolbar>
+        <WindowContent>
+          <Container>
+            <button variant="primary" type="button" onClick={handleDownload}>
+              {os !== "unknown" && (
+                <>
+                  {getOsIcon()}
+                  Скачать игру
+                </>
+              )}
+              {os === "unknown" && " Скачать игру"}
+            </button>
+          </Container>
+        </WindowContent>
+      </Window>
+      </Draggable>
+    </Wrapper>
+    
   );
 };
 
