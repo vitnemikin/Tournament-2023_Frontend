@@ -9,7 +9,7 @@ import NavigatorComponent from "./components/NavigatorComponent/NavigatorCompone
 import FooterComponent from "./components/FooterComponent/FooterComponent";
 import { ThemeProvider } from "styled-components";
 import "./styles.scss";
-import original from "react95/dist/themes/original";
+import original from "react95/dist/themes/original" 
 
 const App = () => {
   return (

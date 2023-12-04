@@ -7,8 +7,11 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { loginUser } from "../../redux/actions/actions";
 import { redirect } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const LoginComponent = ({ loginUser }) => {
+  const { t } = useTranslation();
+
   const handleLogin = () => {
     let loginData = {
       login: document.getElementById("loginUsername").value,
@@ -26,22 +29,22 @@ const LoginComponent = ({ loginUser }) => {
     >
       <Card className="cardRegistration mt-5 w-50">
         <Card.Img variant="top" src="./rugby.png" className="mt-4" />
-        <h2>Войти</h2>
+        <h2>{t("login_component.login")}</h2>
         <CardBody className="w-75">
           <Form className="text-center loginforms">
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Имя пользователя</Form.Label>
+              <Form.Label>{t("login_component.username")}</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Введите имя пользователя"
+                placeholder={t("login_component.enter_username")}
                 id="loginUsername"
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Пароль</Form.Label>
+              <Form.Label>{t("login_component.password")}</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="Введите пароль"
+                placeholder={t("login_component.enter_password")}
                 id="loginPassword"
               />
             </Form.Group>
@@ -51,12 +54,12 @@ const LoginComponent = ({ loginUser }) => {
               onClick={handleLogin}
             >
               <NavLink className="nav-link" to="/profile">
-                Войти
+              {t("login_component.sign_in")}
               </NavLink>
             </Button>
             <Button className="w-100 regbtn mt-3 mb-5" type="button">
               <NavLink className="nav-link" to="/register">
-                Создать профиль
+              {t("login_component.sign_up")}
               </NavLink>
             </Button>
           </Form>

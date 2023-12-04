@@ -2,8 +2,10 @@ import React from "react";
 import { useSpring, animated, config } from "react-spring";
 import Container from "react-bootstrap/Container";
 import { Card, CardBody, CardFooter } from "react-bootstrap";
+import { useTranslation } from 'react-i18next'
 
 const MainComponent = () => {
+  const { t } = useTranslation();
   const cardAnimation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
@@ -17,17 +19,12 @@ const MainComponent = () => {
           <Card.Img variant="top" src="./rugby.png" className="mt-4" />
           <CardBody className="w-100">
             <h4>
-              Погрузись в мир кода и спорта на захватывающем турнире
-              программирования с ItStep Academy. Создай свою команду регбистов,
-              напиши умный код для управления игрой и покажи свои навыки
-              соперникам!
+              {t('main_component.description')}
             </h4>
           </CardBody>
           <CardFooter className="mt-5">
             <p>
-              В ItStep Academy мы создаём уникальный практический подход к
-              обучению, который сочетает в себе технологии, спорт и игры в самом
-              захватывающем сочетании.
+            {t('main_component.footer')}
             </p>
           </CardFooter>
         </Card>

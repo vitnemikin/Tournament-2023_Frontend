@@ -6,8 +6,10 @@ import { Card, CardBody } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
 import { registerUser } from "../../redux/actions/actions";
+import { useTranslation } from "react-i18next";
 
 const RegistrationComponent = ({ registerUser }) => {
+  const { t } = useTranslation();
   // eslint-disable-next-line
   const dispatch = useDispatch();
 
@@ -15,50 +17,50 @@ const RegistrationComponent = ({ registerUser }) => {
     <Container className="d-flex justify-content-center">
       <Card className="cardRegistration mt-5 w-75">
         <Card.Img variant="top" src="./rugby.png" className="mt-4" />
-        <h2>Регистрация</h2>
+        <h2>{t('registration_component.registration')}</h2>
         <CardBody className="w-75">
           <Form className="text-center regforms">
             <Form.Group className="mb-3" controlId="formBasicName">
-              <Form.Label>Имя</Form.Label>
+              <Form.Label>{t('registration_component.name')}</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Введите ваше имя"
+                placeholder={t('registration_component.enter_name')}
                 id="registrationName"
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicLastname">
-              <Form.Label>Фамилия</Form.Label>
+              <Form.Label>{t('registration_component.lastname')}</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Введите вашу фамилию"
+                placeholder={t('registration_component.enter_lastname')}
                 id="registrationlastName"
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Электронная почта</Form.Label>
+              <Form.Label>{t('registration_component.email')}</Form.Label>
               <Form.Control
                 type="email"
-                placeholder="Введите ваш e-mail адрес "
+                placeholder={t('registration_component.enter_email')}
                 id="registrationEmail"
               />
               <Form.Text className="text-muted mutedcolor">
-                Мы никогда не передадим ваши данные сторонним лицам
+              {t('registration_component.third_parties')}
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicUsername">
-              <Form.Label>Имя пользователя</Form.Label>
+              <Form.Label>{t('registration_component.username')}</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Введите имя пользователя"
+                placeholder={t('registration_component.enter_username')}
                 id="registrationuserName"
               />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Пароль</Form.Label>
+              <Form.Label>{t('registration_component.password')}</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="Введите пароль"
+                placeholder={t('registration_component.enter_password')}
                 id="registrationPassword"
               />
             </Form.Group>
@@ -89,7 +91,7 @@ const RegistrationComponent = ({ registerUser }) => {
                 registerUser(userData);
               }}
             >
-              Создать профиль
+              {t('registration_component.sign_up')}
             </Button>
           </Form>
         </CardBody>

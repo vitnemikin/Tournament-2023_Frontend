@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
 import Draggable from 'react-draggable';
 import Wrapper from "./Wrapper";
+import { useTranslation } from "react-i18next";
 import {
   faWindows,
   faApple,
@@ -14,6 +15,7 @@ import {
 import { Window, WindowHeader, WindowContent, Toolbar } from "react95";
 
 const DownloadsComponent = ({ downloadGame }) => {
+  const { t } = useTranslation();
   const [os, setOs] = useState("unknown");
 
   useEffect(() => {
@@ -56,7 +58,7 @@ const DownloadsComponent = ({ downloadGame }) => {
     <Draggable>
       <Window resizable id="clsbtn" className="window" style={{fontFamily: ms_sans_serif, width: '25%', height: '150px'}}>
         <WindowHeader className="window-title">
-          <span>Скачать игру</span>
+          <span>{t("downloads_component.download_game")}</span>
           <button onClick={() => {
             document.querySelector('#clsbtn').classList.add('closed');
           }}style={{ width: "30px",
@@ -66,13 +68,13 @@ const DownloadsComponent = ({ downloadGame }) => {
         </WindowHeader>
         <Toolbar>
           <button variant="menu" size="sm">
-            File
+          {t("downloads_component.file")}
           </button>
           <button variant="menu" size="sm">
-            Edit
+          {t("downloads_component.edit")}
           </button>
           <button variant="menu" size="sm" disabled>
-            Save
+          {t("downloads_component.save")}
           </button>
         </Toolbar>
         <WindowContent>
@@ -81,7 +83,7 @@ const DownloadsComponent = ({ downloadGame }) => {
               {os !== "unknown" && (
                 <>
                   {getOsIcon()}
-                  Скачать игру
+                  {t("downloads_component.download_game")}
                 </>
               )}
               {os === "unknown" && " Скачать игру"}

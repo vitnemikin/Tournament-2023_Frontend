@@ -1,0 +1,52 @@
+{
+  "main_component": {
+    "description": "Immerse yourself in the world of code and sports at an exciting programming tournament with ItStep Academy. Create your own team of rugby players, write smart code to control the game and show your skills to your opponents!",
+    "footer": "At ItStep Academy we create a unique, hands-on approach to learning that combines technology, sports and games in the most exciting combination."
+  },
+  "navigator_component": {
+    "itstep": "ITStep Academy",
+    "main_page": "Main Page",
+    "downloads": "Downloads",
+    "profile": "Profile",
+    "login": "Login",
+    "language": "Language"
+  },
+  "footer_component": {
+    "about": "About us",
+    "contacts": "Contacts",
+    "blog": "Blog",
+    "trademark": "© 1999-2023 ITStep Academy"
+  },
+  "login_component": {
+    "login": "Login",
+    "username": "Username",
+    "password": "Password",
+    "sign_in": "Sign in",
+    "sign_up": "Sing up",
+    "enter_username": "Enter username",
+    "enter_password": "Enter password"
+  },
+  "registration_component": {
+    "registration": "Registration",
+    "name": "First name",
+    "lastname": "Last name",
+    "email": "E-mail",
+    "username": "Username",
+    "password": "Password",
+    "sign_up": "Sing up",
+    "enter_name": "Enter your name",
+    "enter_lastname": "Enter your lastname",
+    "enter_username": "Enter your username",
+    "enter_password": "Enter password",
+    "enter_email": "Enter your e-mail adress",
+    "third_parties": "We will never share your data with third parties"
+  },
+  "downloads_component": {
+    "download_game": "Download game",
+    "file": "File",
+    "edit": "Edit",
+    "save": "Save"
+
+
+  }
+}
