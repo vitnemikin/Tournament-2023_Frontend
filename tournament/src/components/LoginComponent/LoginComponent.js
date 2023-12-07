@@ -18,7 +18,6 @@ const LoginComponent = ({ loginUser, isLoggedIn }) => {
       password: document.getElementById("loginPassword").value,
     };
     loginUser(loginData.login, loginData.password);
-
   };
   return (
     <Container
@@ -51,9 +50,10 @@ const LoginComponent = ({ loginUser, isLoggedIn }) => {
               type="button"
               onClick={handleLogin}
             >
-              <NavLink className="nav-link" to="/profile">
-                {t("login_component.sign_in")}
-              </NavLink>
+              {/* <NavLink className="nav-link" to="/profile">
+           
+              </NavLink> */}
+              {t("login_component.sign_in")}
             </Button>
             <Button className="w-100 regbtn mt-3 mb-5" type="button">
               <NavLink className="nav-link" to="/register">
