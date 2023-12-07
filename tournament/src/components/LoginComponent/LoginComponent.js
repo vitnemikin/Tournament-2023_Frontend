@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { loginUser } from "../../redux/actions/actions";
-import { redirect } from "react-router-dom";
+// import { redirect } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const LoginComponent = ({ loginUser, isLoggedIn }) => {
