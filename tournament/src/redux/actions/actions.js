@@ -51,7 +51,7 @@ export function confirmUser(username, token) {
 
 export function loginUser(login, password) {
   return (dispatch) => {
-    fetch(`/auth/login`, {
+      fetch(`/auth/login`, {
       method: "POST",
       body: JSON.stringify({ login, password }),
       headers: {
@@ -68,7 +68,7 @@ export function loginUser(login, password) {
             
           });
         } else {
-          console.error("Ошибка при входе пользователя: ", data.statusCode);
+          console.log("Ошибка при входе пользователя: ", data.statusCode);
           dispatch({
             type: "LOGIN_USER_ERROR",
             error: data.statusCode,

@@ -19,11 +19,11 @@ const ProfileComponent = ({ userData }) => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleAvatarChange = (e) => {
-    const file = e.target.files[0];
-    const fileUrl = URL.createObjectURL(file);
-    setFormData((prevData) => ({ ...prevData, avatar: fileUrl }));
-  };
+  // const handleAvatarChange = (e) => {
+  //   const file = e.target.files[0];
+  //   const fileUrl = URL.createObjectURL(file);
+  //   setFormData((prevData) => ({ ...prevData, avatar: fileUrl }));
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,7 +40,7 @@ const ProfileComponent = ({ userData }) => {
       </Row>
       <Row className="mt-4">
         <Col md={4}>
-          <img
+          {/* <img
             src={formData.avatar || "/default-avatar.png"}
             alt="Аватар"
             className="img-fluid rounded-circle"
@@ -54,7 +54,7 @@ const ProfileComponent = ({ userData }) => {
                 onChange={handleAvatarChange}
               />
             </Form.Group>
-          )}
+          )} */}
         </Col>
         <Col md={8}>
           <ListGroup>

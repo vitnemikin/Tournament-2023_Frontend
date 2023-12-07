@@ -8,6 +8,8 @@ import { connect } from "react-redux";
 import { registerUser } from "../../redux/actions/actions";
 import { useTranslation } from "react-i18next";
 
+
+
 const RegistrationComponent = ({ registerUser }) => {
   const { t } = useTranslation();
   // eslint-disable-next-line

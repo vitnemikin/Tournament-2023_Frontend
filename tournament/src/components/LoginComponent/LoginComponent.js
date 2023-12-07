@@ -9,7 +9,7 @@ import { loginUser } from "../../redux/actions/actions";
 import { redirect } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-const LoginComponent = ({ loginUser }) => {
+const LoginComponent = ({ loginUser, isLoggedIn }) => {
   const { t } = useTranslation();
 
   const handleLogin = () => {
@@ -17,10 +17,11 @@ const LoginComponent = ({ loginUser }) => {
       login: document.getElementById("loginUsername").value,
       password: document.getElementById("loginPassword").value,
     };
-
     loginUser(loginData.login, loginData.password);
 
-    redirect("/profile");
+    if (isLoggedIn) {
+      redirect("/profile");
+    }
   };
   return (
     <Container
@@ -54,12 +55,12 @@ const LoginComponent = ({ loginUser }) => {
               onClick={handleLogin}
             >
               <NavLink className="nav-link" to="/profile">
-              {t("login_component.sign_in")}
+                {t("login_component.sign_in")}
               </NavLink>
             </Button>
             <Button className="w-100 regbtn mt-3 mb-5" type="button">
               <NavLink className="nav-link" to="/register">
-              {t("login_component.sign_up")}
+                {t("login_component.sign_up")}
               </NavLink>
             </Button>
           </Form>
@@ -70,7 +71,10 @@ const LoginComponent = ({ loginUser }) => {
 };
 
 const mapStateToProps = (state) => {
-  return {};
+  const { isLoggedIn } = state.isLoggedIn;
+  return {
+    isLoggedIn,
+  };
 };
 
 const mapDispatchToProps = { loginUser };
