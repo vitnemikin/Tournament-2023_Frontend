@@ -1,6 +1,6 @@
 
 const userReducer = (
-  state = { userData: {name: 'Alan', last_name: 'Altindis', email: 'altindisalan@gmail.com', country: 'KZ', paswword: 1234,  isLoggedIn: false }, error: null },
+  state = { userData: {name: 'Alan', last_name: 'Altindis', email: 'altindisalan@gmail.com', country: 'KZ', paswword: '1234',  isLoggedIn: false }, error: null },
   action
 ) => {
   switch (action.type) {
