@@ -19,9 +19,6 @@ const LoginComponent = ({ loginUser, isLoggedIn }) => {
     };
     loginUser(loginData.login, loginData.password);
 
-    if (isLoggedIn) {
-      redirect("/profile");
-    }
   };
   return (
     <Container
