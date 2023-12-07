@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 
 
-const RegistrationComponent = ({ registerUser }) => {
+const RegistrationComponent = ({ registerUser, emailSent }) => {
   const { t } = useTranslation();
   // eslint-disable-next-line
   const dispatch = useDispatch();
@@ -95,6 +95,12 @@ const RegistrationComponent = ({ registerUser }) => {
             >
               {t('registration_component.sign_up')}
             </Button>
+            {emailSent && (
+              <Form.Text className="text-muted mutedcolor">
+              {t('registration_component.email_sent')}
+              </Form.Text>
+
+            )}
           </Form>
         </CardBody>
       </Card>
@@ -103,8 +109,11 @@ const RegistrationComponent = ({ registerUser }) => {
 };
 
 const mapStateToProps = (state) => {
+  const { emailSent } = state;
   return {
-    ...state,
+
+    emailSent
+  
   };
 };
 

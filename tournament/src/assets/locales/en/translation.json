@@ -39,7 +39,8 @@
     "enter_username": "Enter your username",
     "enter_password": "Enter password",
     "enter_email": "Enter your e-mail adress",
-    "third_parties": "We will never share your data with third parties"
+    "third_parties": "We will never share your data with third parties",
+    "email_sent": "Confirmation message has been sent to your email"
   },
   "downloads_component": {
     "download_game": "Download game",

@@ -1,13 +1,13 @@
 
 const userReducer = (
-  state = { userData: {name: 'Alan', last_name: 'Altindis', email: 'altindisalan@gmail.com', country: 'KZ', paswword: '1234',  isLoggedIn: false }, error: null },
+  state = { userData: {}, emailSent: false },
   action
 ) => {
   switch (action.type) {
     case "REGISTER_USER_SUCCESS":
       return {
         ...state,
-        userData: action.userData,
+        emailSent: true
       };
     case "REGISTER_USER_ERROR":
       return state;
