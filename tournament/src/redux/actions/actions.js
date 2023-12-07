@@ -13,7 +13,8 @@ export function registerUser(userData) {
       .then((response) => response.json())
       .then((data) => {
         if(data.statusCode !== 200){
-          console.error(`Ошибка ${data}, данные не получены!`);
+          console.error(`Ошибка ${data.statusCode}, данные не получены! Снизу подробнее`);
+          console.log(data);
           dispatch({
             type: "REGISTER_USER_ERROR",
             error: data
