@@ -71,7 +71,7 @@ const LoginComponent = ({ loginUser, isLoggedIn }) => {
 };
 
 const mapStateToProps = (state) => {
-  const { isLoggedIn } = state.isLoggedIn;
+  const { isLoggedIn } = state;
   return {
     isLoggedIn,
   };

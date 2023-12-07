@@ -12,12 +12,20 @@ export function registerUser(userData) {
       .then(console.log("успешно отправлен запрос"))
       .then((response) => response.json())
       .then((data) => {
+        if(data.statusCode !== 200){
+          console.error(`Ошибка ${data.statusCode}, данные не получены!`);
+          dispatch({
+            type: "REGISTER_USER_ERROR",
+            error: data
+          })
+        } else {
+          console.log("данные успешно получены,", data);
+          dispatch({
+            type: "REGISTER_USER_SUCCESS",
+            userData: data,
+          });
+        }
         // Если наш запрос успешен - диспатчим действие для обновления состояния
-        console.log("данные успешно получены,", data);
-        dispatch({
-          type: "REGISTER_USER_SUCCESS",
-          userData: data,
-        });
       })
       .catch((error) => {
         // Ну а тут для ошибочек
