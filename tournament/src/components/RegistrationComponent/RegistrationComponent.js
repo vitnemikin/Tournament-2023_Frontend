@@ -1,4 +1,4 @@
-import { React, useRef } from "react";
+import { React, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -9,11 +9,17 @@ import { useTranslation } from "react-i18next";
 
 const RegistrationComponent = ({ registerUser, emailSent }) => {
   const { t } = useTranslation();
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
-  const nameRef = useRef(null);
-  const lastnameRef = useRef(null);
-  const loginRef = useRef(null);
+  const {userData, setUserData } = useState({
+    name: '',
+    lastName: '',
+    email: '',
+    password: '',
+    login: ''
+  });
+  
+  const handleFormSubmit = () => {
+    registerUser(userData);
+  };
 
   return (
     <Container className="d-flex justify-content-center">
@@ -27,7 +33,8 @@ const RegistrationComponent = ({ registerUser, emailSent }) => {
               <Form.Control
                 type="text"
                 placeholder={t("registration_component.enter_name")}
-                ref={nameRef}
+                value={userData.name}
+                onChange={(e) => setUserData({ ...userData, name: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicLastname">
@@ -35,7 +42,8 @@ const RegistrationComponent = ({ registerUser, emailSent }) => {
               <Form.Control
                 type="text"
                 placeholder={t("registration_component.enter_lastname")}
-                ref={lastnameRef}
+                value={userData.lastName}
+                onChange={(e) => setUserData({ ...userData, lastName: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -43,7 +51,8 @@ const RegistrationComponent = ({ registerUser, emailSent }) => {
               <Form.Control
                 type="email"
                 placeholder={t("registration_component.enter_email")}
-                ref={emailRef}
+                value={userData.email}
+                onChange={(e) => setUserData({ ...userData, email: e.target.value })}
               />
               <Form.Text className="text-muted mutedcolor">
                 {t("registration_component.third_parties")}
@@ -54,7 +63,8 @@ const RegistrationComponent = ({ registerUser, emailSent }) => {
               <Form.Control
                 type="text"
                 placeholder={t("registration_component.enter_username")}
-                ref={loginRef}
+                value={userData.login}
+                onChange={(e) => setUserData({ ...userData, login: e.target.value })}
               />
             </Form.Group>
 
@@ -63,29 +73,14 @@ const RegistrationComponent = ({ registerUser, emailSent }) => {
               <Form.Control
                 type="password"
                 placeholder={t("registration_component.enter_password")}
-                ref={passwordRef}
+                value={userData.password}
+                onChange={(e) => setUserData({ ...userData, password: e.target.value })}
               />
             </Form.Group>
             <Button
               type="button"
               className="w-100 regbtn mt-3"
-              onClick={() => {
-                let email = emailRef.current.value;
-                let name = nameRef.current.value;
-                let lastName = lastnameRef.current.value;
-                let username = loginRef.current.value;
-                let password = passwordRef.current.value;
-
-                const userData = {
-                  first_name: name,
-                  last_name: lastName,
-                  email: email,
-                  login: username,
-                  password: password,
-                };
-
-                registerUser(userData);
-              }}
+              onClick={handleFormSubmit}
             >
               {t("registration_component.sign_up")}
             </Button>

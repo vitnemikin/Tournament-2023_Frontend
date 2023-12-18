@@ -1,4 +1,4 @@
-import { React, useRef } from "react";
+import { React, useState } from "react";
 import Container from "react-bootstrap/Container";
 import { Card, CardBody } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -12,15 +12,13 @@ import { useTranslation } from "react-i18next";
 const LoginComponent = ({ loginUser, isLoggedIn }) => {
   const { t } = useTranslation();
 
-  const loginRef = useRef(null);
-  const passwordRef = useRef(null);
+  const {loginData, setLoginData} = useState({
+    login: '',
+    password: ''
+  })
 
   const handleLogin = () => {
-    let loginData = {
-      login: loginRef.current.value,
-      password: passwordRef.current.value
-    };
-    loginUser(loginData.login, loginData.password);
+    loginUser(loginData);
   };
   return (
     <Container
@@ -38,7 +36,8 @@ const LoginComponent = ({ loginUser, isLoggedIn }) => {
                 type="text"
                 placeholder={t("login_component.enter_username")}
                 id="loginUsername"
-                ref={loginRef}
+                value={loginData.login}
+                onChange={(e) => setLoginData({...loginData, login: e.target.value})}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -47,7 +46,8 @@ const LoginComponent = ({ loginUser, isLoggedIn }) => {
                 type="password"
                 placeholder={t("login_component.enter_password")}
                 id="loginPassword"
-                ref={passwordRef}
+                value={loginData.password}
+                onChange={(e) => setLoginData({...loginData, paswword: e.target.value})}
               />
             </Form.Group>
             <Button
