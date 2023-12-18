@@ -3,7 +3,6 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Card, CardBody } from "react-bootstrap";
-import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
 import { registerUser } from "../../redux/actions/actions";
 import { useTranslation } from "react-i18next";
