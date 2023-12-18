@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useRef } from "react";
 import Container from "react-bootstrap/Container";
 import { Card, CardBody } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -12,10 +12,13 @@ import { useTranslation } from "react-i18next";
 const LoginComponent = ({ loginUser, isLoggedIn }) => {
   const { t } = useTranslation();
 
+  const loginRef = useRef(null);
+  const passwordRef = useRef(null);
+
   const handleLogin = () => {
     let loginData = {
-      login: document.getElementById("loginUsername").value,
-      password: document.getElementById("loginPassword").value,
+      login: loginRef.current.value,
+      password: passwordRef.current.value
     };
     loginUser(loginData.login, loginData.password);
   };
@@ -35,6 +38,7 @@ const LoginComponent = ({ loginUser, isLoggedIn }) => {
                 type="text"
                 placeholder={t("login_component.enter_username")}
                 id="loginUsername"
+                ref={loginRef}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -43,6 +47,7 @@ const LoginComponent = ({ loginUser, isLoggedIn }) => {
                 type="password"
                 placeholder={t("login_component.enter_password")}
                 id="loginPassword"
+                ref={passwordRef}
               />
             </Form.Group>
             <Button
