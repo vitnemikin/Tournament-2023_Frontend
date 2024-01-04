@@ -1,17 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { downloadReducer } from "../reducers/downloadSlice.ts";
-import userReducer from "../reducers/userSlice.ts";
+import { downloadReducer } from "../reducers/downloadSlice";
+import userReducer from "../reducers/userSlice";
 
 
- const store = configureStore({
+export const store = configureStore({
     reducer: {
       donwload: downloadReducer,
       user: userReducer
     }
   })
 
-
-  export default store;
 
   export type RootState = ReturnType<typeof store.getState>
 

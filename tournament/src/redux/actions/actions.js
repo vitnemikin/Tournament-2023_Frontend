@@ -92,7 +92,7 @@ export function downloadGame(os) {
   return (dispatch) => {
     fetch(`/downloads/${os}`)
       .then((response) => {
-        if (!response.ok) {
+        if (response.status !== 200) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         return response.json();
@@ -108,3 +108,4 @@ export function downloadGame(os) {
       });
   };
 }
+
