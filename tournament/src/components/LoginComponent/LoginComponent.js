@@ -5,17 +5,18 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { loginUser } from "../../redux/actions/actions";
+import { loginUser } from "../../redux/reducers/userSlice.ts";
 // import { redirect } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const LoginComponent = ({ loginUser, isLoggedIn }) => {
   const { t } = useTranslation();
 
-  const {loginData, setLoginData} = useState({
-    login: '',
-    password: ''
-  })
+  const [loginData, setLoginData] = useState({
+    login: "",
+    password: "",
+  });
+  
 
   const handleLogin = () => {
     loginUser(loginData);
@@ -37,7 +38,9 @@ const LoginComponent = ({ loginUser, isLoggedIn }) => {
                 placeholder={t("login_component.enter_username")}
                 id="loginUsername"
                 value={loginData.login}
-                onChange={(e) => setLoginData({...loginData, login: e.target.value})}
+                onChange={(e) =>
+                  setLoginData({ ...loginData, login: e.target.value })
+                }
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -47,7 +50,9 @@ const LoginComponent = ({ loginUser, isLoggedIn }) => {
                 placeholder={t("login_component.enter_password")}
                 id="loginPassword"
                 value={loginData.password}
-                onChange={(e) => setLoginData({...loginData, paswword: e.target.value})}
+                onChange={(e) =>
+                  setLoginData({ ...loginData, paswword: e.target.value })
+                }
               />
             </Form.Group>
             <Button

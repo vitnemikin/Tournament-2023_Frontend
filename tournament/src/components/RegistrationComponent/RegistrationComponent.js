@@ -4,12 +4,12 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Card, CardBody } from "react-bootstrap";
 import { connect } from "react-redux";
-import { registerUser } from "../../redux/actions/actions";
+import { registerUser } from "../../redux/reducers/userSlice.ts";
 import { useTranslation } from "react-i18next";
 
 const RegistrationComponent = ({ registerUser, emailSent }) => {
   const { t } = useTranslation();
-  const {userData, setUserData } = useState({
+  const [userData, setUserData] = useState({
     name: '',
     lastName: '',
     email: '',
